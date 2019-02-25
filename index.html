@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Born To Grill!</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <!--google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <!--smooth scrolling js-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--particles javascript-->
+        <script src="particles.js"></script>
+    </head>
+    <body>   
+         <header>
+            <!--Navigation--> 
+             <div class="black">
+               <div class="container">
+                <nav class="row">
+                   <div class="col">
+                    <img src="img/logo.png" width="100">
+                   </div>
+                <!--hamburger icon-->    
+                   <div class="col text-right">
+                    <div class="dropdown"> 
+                      <div class="dropbtn">    
+                       <img src="img/menu2.png" width="50">
+                      </div>      
+                     <div class="dropdown-content text-center">
+                      <a href="#about">About</a>
+                      <a href="#"><img src="img/user.png" width="20">Log In</a>
+                      <a href="#">About</a>     
+                     </div>
+                    </div>   
+                  </div>    
+                </nav>
+              </div>
+        <!--hero section-->       
+                 <div class="content text-center">
+                    <h1>Griller Recipes</h1>
+                    <p>An awesome recipe database!</p>
+                    <input type="text" placeholder="Search Database..">
+                     <button class="button">Find Recipe</button>
+                </div>     
+            </div>     
+        </header>
+        <!--About us-->
+       
+            <div class="container about">    
+                <div class="row">
+                    <div class="col-sm-6" id="about">
+                        <h1>About Us</h1>
+                        <p>We are a Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing </p>
+                        <button class="button btn-2 text-center">How it Works</button>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <img src="img/about.png" width="300" height="300">
+                    </div>
+                </div>
+            </div>
+        <!--features section-->
+    <div class="grey">
+        <div class="container features">
+            <div class="row text-center">
+                <h2 class="col-sm-12">With our app you can...</h2>
+            </div>    
+            <section class="row text-center">
+                <div class="col-md-4">
+                    <img src="img/learn2.png" width="150" height="150" class="img-fluid">
+                    <h3>Learn</h3>
+                     <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+                 <div class="col-md-4">
+                     <img src="img/create.png" width="150" height="150">
+                     <h3>Create</h3>
+                     <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+                 <div class="col-md-4"> 
+                    <img src="img/share.png" width="150" height="150">
+                   <h3>Share</h3>
+                     <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>  
+            </section>
+        </div> 
+        </div>    
+        <!--Testimonials section-->
+<div class="container test">
+  <div class="slideshow-container">
+    <div class="mySlides">
+      <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+      <p class="author">- John Keats</p>
+    </div>
+
+    <div class="mySlides">
+      <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
+      <p class="author">- Ernest Hemingway</p>
+    </div>
+
+    <div class="mySlides">
+      <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+      <p class="author">- Thomas A. Edison</p>
+       </div>
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>  
+  </div>
+  <div class="dot-container">
+   <span class="dot" onclick="currentSlide(1)"></span> 
+   <span class="dot" onclick="currentSlide(2)"></span> 
+   <span class="dot" onclick="currentSlide(3)"></span> 
+ </div>    
+</div>
+<!--Footer:particles first then info-->
+<div id="particles-js"></div>        
+<footer>
+    <div class="row">   
+       <span class="a"><img src="img/logo.png" width="35"></span>
+       <span class="a b"><h5>Griller Recipes</h5></span>
+        <div class="social">
+            <img src="img/" width="50">
+            <img src="img/" width="50">
+            <img src="img/" width="50">
+        </div>
+    </div>   
+   <div class="row footer">
+    
+    <div class="col-md-4">   
+       <h5>Advertisers</h5>
+         <ul>
+            <li>balls balls balls</li>
+             <li>balls balls</li>
+             <li>balls</li>
+         </ul>
+    </div>   
+     <div class="col-md-4">
+        <h5>Publishers</h5>
+           <ul>
+            <li>balls balls</li>
+             <li>balls</li>
+         </ul>
+      </div>
+      <div class="col-md-4"> 
+       <h5>Tools</h5>
+           <ul>
+            <li>balls balls bal</li>
+             <li>balls balls</li>
+             <li>balls</li>
+         </ul>
+      </div>      
+    </div>
+    <div class="row text-center"><p>&copy;Griller Recipes 2018</p></div>
+</footer>        
+<script>
+//smooth scrolling
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+  // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});    
+// Testimonial Slide show    
+var slideIndex = 1;
+    showSlides(slideIndex);
+    
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}    
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    
+// If Else Statements
+if (n > slides.length){slideIndex=1}
+if (n < 1){slideIndex = slides.lenght}
+    for (i=0; i < dots.length; i++){slides[i].style.display = "none";
+        }
+    for (i = 0; i < dots.length; i++){dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+}
+// Particles.Js
+
+</script>
+</body>
+</html>    
