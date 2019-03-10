@@ -32,10 +32,14 @@ header{
 .row h1{
     font-family: 'Shrikhand', cursive;
 }
+/* Nav bar & Logo */
 nav{
     width:100%;
     height: auto;
     padding:.5rem;
+}
+.text-left {
+    text-align: left!important;
 }
 .dropdown{
     position: relative;
@@ -63,6 +67,10 @@ nav{
     display: block;
 }
 /*about section*/
+#abtUs {
+    /* Add effect to .about.h1 */
+    text-align: center;
+}
 .container.about{
     margin:2rem auto;
     padding-top: 4rem;
@@ -128,7 +136,6 @@ h3{
   padding: 80px;
   text-align: center;
 }
-
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
@@ -193,12 +200,14 @@ footer{
     height:50%;
     background-color: #282828;
     color:#fff;
+    text-align: center;
 }
 .row.footer{
     width:80%;
     height:auto;
     margin:0 auto;
     padding:1rem;
+    
 }
 ul{
     list-style-type: none;
@@ -212,3 +221,4 @@ span.a.b{
     width:150px;
     height:auto;
 }
+
