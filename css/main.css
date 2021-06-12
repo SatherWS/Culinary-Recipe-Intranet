@@ -1,0 +1,311 @@
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing: border-box;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.main {
+    display: block;
+    margin:0 auto;
+}
+/* Nav bar & Logo */
+nav {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+#home {
+  padding-top: 10px;
+  text-align: right;
+}
+.text-left {
+    text-align: left!important;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+    background-color: black;
+}
+#drop {
+  display: block;
+}
+.dropbtn{
+    padding: 25px;
+}
+.dropdown-content{
+    display: none;
+    background-color: black;
+    width:50px;
+    height: auto;
+    position: absolute;
+    min-width: 100px;
+    border-right: solid 2px #ff5400;
+    border-bottom-right-radius: 5px;
+    z-index: 1;
+}
+.dropdown-content a{
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+a:hover{
+    color: #fff;
+    background-color: #ff5400;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content :hover{
+    display: block;
+    text-decoration: none;
+    -webkit-transition-duration: 0.4s; /* Safari */
+     transition-duration: 0.4s;
+     background-color: #ff5400;
+     color: #fff;
+}
+.dropdown-content img {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: black;
+  align-content: center;
+  display: inline-block;
+
+}
+ .dropdown-content img:hover {
+  background-color: #ff5400;
+  text-align: center;
+  display: inline-block;
+}
+/*hero section*/
+header{
+    background-image: url(../img/new-landing-1.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    min-height: 600px;
+}
+.black{
+   color: #fff;
+   margin: 0 auto;
+   min-height: 689.33px;
+   position: relative;
+}
+.content{
+    width: 100%;
+    height: 100vh;
+    padding: 1rem;
+    background-color:rgba(0,0,0,0.5);
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    font-family: 'Shrikhand', cursive;
+}
+.inner {
+  width: 60%;
+  margin: 0 auto;
+}
+.spc {
+  color: #ff5400;
+  text-decoration: underline;
+}
+::placeholder {
+  color: black;
+}
+.row h1{
+    font-family: 'Shrikhand', cursive;
+}
+/*Add recipe form********************/
+row.cost input {
+  width: 100px;
+  height: auto;
+}
+/*about section*/
+.container.about{
+    margin:2rem auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    height:50%;
+    width: 100%;
+}
+.content p {
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+.content.row {
+  width: 500px;
+  height: auto;
+}
+.button{
+    font-family: 'Shrikhand', cursive;
+    border: none;
+    color:#fff;
+    background-color: rgba(0,0,0,0);
+    background-color: #ff5400;
+    border-color: rgba(0,0,0,0);
+    border:solid 2px #ff5400;
+    margin-top: 1rem;
+    padding:5px 10px;
+    display: block;
+   -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+}
+.button:hover{
+    color:#fff;
+    background-color: rgba(0,0,0,0);
+    border:solid 2px;
+
+}
+button {
+  width: 159px;
+  height: auto;
+}
+/*Prompt to add to the database*/
+.buttons.row{
+  width: 30%;
+  height: auto;
+  margin: 0 auto;
+  align-content: center;
+}
+/*green button*/
+#create {
+  background-color:green;
+  border: solid green 2px
+}
+#create:hover {
+  color:#fff;
+  background-color: rgba(0,0,0,0);
+  border:solid 2px;
+}
+button.btn-2{
+    color: black;
+    background-color: #fff;
+    border:solid 2px;
+}
+/*features section*/
+h2.col-sm-12{
+    padding-bottom: 2rem;
+    font-family: 'Shrikhand', cursive;
+}
+.grey{
+    background-color: #f1f1f1;
+}
+.container.features{
+    height:50%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+h3{
+    font-family: 'Shrikhand', cursive;
+    padding: 1rem;
+}
+/*testimonial section***************/
+.container.test{
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+}
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  margin-top: -30px;
+  background-color: #ff5400;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+   /* background: #ddd;*/
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
+
+/*Footer section*/
+footer{
+    background-color: #282828;
+    color:#fff;
+    text-align: center;
+}
+.social {
+  padding-top: 1rem;
+}
+.row.footer{
+    width:80%;
+    height:auto;
+    margin:0 auto;
+    padding:1rem;
+}
+ul{
+    list-style-type: none;
+}
+span.a.b{
+    width:150px;
+    height:auto;
+}
+p {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+.row.legal p {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
