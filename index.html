@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Culinary recipes</title>
+        <title>Killer Recipes</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
         integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -25,26 +25,25 @@
 <!--Navigation & Home Page----------------------------------------------------->
          <header id="find">
              <div class="black">
-               <nav class="row">
+               <nav class="flex-space">
                  <!--Menu List-->
-                 <div class="col-md-6 text-left">
+                 <div class="text-left">
                    <div class="dropdown">
                      <div onclick="closeMenu()" class="dropbtn">
                        <img  src="img/menu2.png" width="50">
                      </div>
                      <!--Navigation-------------------------------------------->
                      <div id ="drop" class="dropdown-content text-center">
-                       <a href="#">Sign Up</a>
-                       <a href="#">Log In</a>
-                       <a href="#about">About</a>
                        <a href="#find">Search</a>
+                       <a href="#faq">Database</a>
+                       <a href="#about">About</a>
                        <a href="#faq">F.A.Q</a>
                        <img onclick="closeMenu()" src="img/close.png" width="25">
                      </div>
                    </div>
                  </div>
                  <!--Logo-->
-                 <div id="home" class="col-md-6">
+                 <div id="home">
                    <img src="img/newLogo.png" width="60">
                  </div>
                </nav>
@@ -105,9 +104,6 @@
 <!--features section----------------------------------------------------------->
     <div class="grey">
         <div class="container features">
-            <div class="row text-center">
-                <h2 class="col-sm-12">With our app you can...</h2>
-            </div>
             <section class="row text-center">
               <div class="col-md-4">
                 <img src="img/create.png" width="150" height="150">
@@ -130,6 +126,7 @@
 <!--Testimonials section------------------------------------------------------->
 <!-- bug: takes two clicks to start the slide show-->
 <div class="container test">
+  <h2 class="text-center testimonials">Testimonials (jk)</h2>
   <div class="slideshow-container">
     <div style = "display: block" class="mySlides">
       <q>The beautiful thing about learning is nobody can take it away from you.</q>
@@ -159,36 +156,11 @@
     <div class="social">
         <span class="a"><img src="img/newLogo.png" width="60"></span>
     </div>
-   <div class="row footer">
-
-    <div class="col-md-4">
-       <h5>Advertisers</h5>
-         <ul>
-            <li>test test test</li>
-             <li>test test test</li>
-             <li>test test test</li>
-         </ul>
-    </div>
-     <div class="col-md-4">
-        <h5>Publishers</h5>
-           <ul>
-             <li>test test test</li>
-             <li>test test test</li>
-             <li>test test test</li>
-         </ul>
-      </div>
-      <div class="col-md-4">
-       <h5>Tools</h5>
-           <ul>
-            <li>test test test</li>
-             <li>test test test</li>
-             <li>test test test</li>
-         </ul>
-      </div>
-    </div>
+    <br>
     <div class="row legal">
-        <p class="text-center">&copy;Griller Recipes 2018</p>
+      <p class="text-center">&copy;Griller Recipes 2021</p>
     </div>
+    <br>
 </footer>
 </body>
 </html>

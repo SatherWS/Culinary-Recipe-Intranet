@@ -108,6 +108,13 @@ header{
   width: 60%;
   margin: 0 auto;
 }
+.flex-space {
+  display: flex;
+  justify-content: space-between;
+}
+#home {
+  padding-right: 10px;
+}
 .spc {
   color: #ff5400;
   text-decoration: underline;
@@ -117,6 +124,9 @@ header{
 }
 .row h1{
     font-family: 'Shrikhand', cursive;
+}
+.testimonials {
+  font-family: 'Shrikhand', cursive;
 }
 /*Add recipe form********************/
 row.cost input {
@@ -280,7 +290,7 @@ q {font-style: italic;}
 
 /*Footer section*/
 footer{
-    background-color: #282828;
+    background-color: black;
     color:#fff;
     text-align: center;
 }
