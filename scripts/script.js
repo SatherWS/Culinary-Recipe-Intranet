@@ -1,4 +1,15 @@
-// Slide Show script
+// Nav Functionality
+function closeMenu() {
+  var menuItems = document.getElementById('drop');
+  if(menuItems.style.display == "none"){
+    menuItems.style.display = "block";
+  }
+  else {
+    menuItems.style.display = "none";
+  }
+}
+
+// Slide show script
 var slideIndex = 1;
 showDivs(slideIndex);
 

@@ -1,4 +1,7 @@
-# Culinary-Recipe-Intranet
-Intranet Database Interface for Culinary Recipes
+# Killer Recipes
+A web site filled with culinary recipes that were scraped from various sources or hand crafted.
 
-This is a very old project, which is why its a static website I may host this on my home server in the future.
+## Websites to scrape
+* [Based Cooking](https://based.cooking)
+* [All Recipes](https://allrecipes.com)
+* [Food Wishes](https://https://foodwishes.blogspot.com/)
