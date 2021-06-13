@@ -54,11 +54,8 @@ nav {
     display: block;
 }
 a:hover{
-    color: #fff;
-    background-color: #ff5400;
-    padding: 12px 16px;
+    color: #ff5400;
     text-decoration: none;
-    display: block;
 }
 .dropdown-content :hover{
     display: block;
@@ -170,10 +167,6 @@ row.cost input {
     background-color: rgba(0,0,0,0);
     border:solid 2px;
 
-}
-button {
-  width: 159px;
-  height: auto;
 }
 /*Prompt to add to the database*/
 .buttons.row{
