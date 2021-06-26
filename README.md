@@ -1,6 +1,18 @@
 # Killer Recipes
 A web site filled with culinary recipes that were scraped from various sources or hand crafted.
 
+## Development
+
+Run `pip install recipe-scrapers` or `pip install -r requirements.txt`
+
+## Deployment
+
+Execute deploy.sh (wip)
+
+___
+
+# Notes to self
+
 ## Websites to scrape
 * [Based Cooking](https://based.cooking)
 * [All Recipes](https://allrecipes.com)
