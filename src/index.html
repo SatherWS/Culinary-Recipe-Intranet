@@ -25,33 +25,34 @@
 <!--Navigation & Home Page----------------------------------------------------->
         <header id="find">
             <div class="black">
-              <nav class="flex-space">
+              <nav class="flex-space black-rgba">
                 <!--Menu List-->
                 <div class="text-left">
                   <div class="dropdown">
                     <div onclick="closeMenu()" class="dropbtn">
-                      <img  src="img/menu2.png" width="50">
+                      <img src="img/menu2.png" width="50">
                     </div>
                     <!--Navigation-------------------------------------------->
-                    <div id ="drop" class="dropdown-content text-center">
-                      <a href="#find">Search</a>
-                      <a href="#faq">Database</a>
-                      <a href="#about">About</a>
-                      <a href="#faq">F.A.Q</a>
-                      <img onclick="closeMenu()" src="img/close.png" width="25">
+                    <div id ="drop" class="dropdown-content">
+                      <a href="#about">About Us</a>
+                      <a href="results.html?all=true">Our Recipes</a>
+                      <a href="scraper.html">Web Scraper</a>
+                      <a href="#faq">Contact Info</a>
                     </div>
                   </div>
                 </div>
                 <!--Logo-->
                 <div id="home">
-                  <img src="img/newLogo.png" width="60">
+                  <a href="index.html">
+                    <img src="img/newLogo.png" width="60">
+                  </a>
                 </div>
               </nav>
                 <!--hero img section----------------------------------------------------------->
                 <div class="content">
                   <section class="inner">
                   <h1>An <span class="spc">awesome</span> collection of recipes!</h1>
-                  <input class="form-control" id="searchItem" type="text" placeholder="Search recipe database">
+                  <input class="form-control" id="searchItem" type="text" placeholder="Search our recipe database">
                   <button class="button">Find Recipe</button>
                   <br>
                 </section>
@@ -63,10 +64,10 @@
                 <div class="row">
                     <div class="col-sm-6" id="about">
                         <h1 id="abtUs">Why does this exist?</h1>
-                        <p>I used to be a line cook at a deli. It sucked but, I'd have the privilege of cooking great meals for myself, friends, and family. Now as a programmer I find myself
-                          exclusively eating prepared foods and eating out way too much. I miss the activity of preparing a meals for groups of
-                          people to enjoy together. Perhaps if I build a large database of awesome recipes I'll regain 
-                          the motivation to get back into cooking.
+                        <p>
+                          I wanted to provide a simple collection of easy to read food recipes. Too many cooking websites are
+                          littered with ads and  loosely related personal anecdotes. Our site simply provides the steps and ingredients needed for each dish.
+                          Our collection is gathered from <a href="#">our web scraper</a> and user submitted recipes.
                         </p>
                         <button class="button btn-2 text-center">Search Our Database</button>
                     </div>
@@ -101,19 +102,25 @@
 <!-- bug: takes two clicks to start the slide show-->
 <div class="container test">
   <h2 class="text-center testimonials">Testimonials</h2>
-  <p class="text-center">If you would like to submit a testimonial, email <a href="mailto:info@killer.recipes">info@killer.recipes</a></p>
+  <p class="text-center">If you would like to submit a review of our content email <a href="mailto:info@killer.recipes">info@killer.recipes</a></p>
   <div class="slideshow-container">
     <div style = "display: block" class="mySlides">
+      <img src="img/user.png" width="100px">
+      <br></br>
       <q>The beautiful thing about learning is nobody can take it away from you.</q>
       <p class="author">- Riley B. King</p>
     </div>
 
     <div class="mySlides">
+      <img src="img/user.png" width="100px">
+      <br></br>
       <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
       <p class="author">- Ernest Hemingway</p>
     </div>
 
     <div class="mySlides">
+      <img src="img/user.png" width="100px">
+      <br></br>
       <q>I have not failed. I've just found 10,000 ways that won't work.</q>
       <p class="author">- Thomas A. Edison</p>
     </div>

@@ -1,0 +1,10 @@
+.content {
+    height: 50vh!important;
+}
+.panel h1{
+    font-family: 'Shrikhand', cursive;
+}
+.panel {
+    width: 62.5%;
+    margin: 0 auto;
+}

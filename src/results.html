@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Killer Recipes</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/results.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <!--google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+        <!--bootstrap-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+        <!--smooth scrolling js-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="scripts/scroll.js"></script>
+        <!--testimonial slideshow script-->
+        <script src="scripts/script.js"></script>
+        <!--search prompt script -->
+        <script src="scripts/homeFunctionality.js"></script>
+    </head>
+    <body>
+<!--Navigation & Home Page----------------------------------------------------->
+        <header id="find">
+            <div class="black">
+              <nav class="flex-space black-rgba">
+                <!--Menu List-->
+                <div class="text-left">
+                  <div class="dropdown">
+                    <div onclick="closeMenu()" class="dropbtn">
+                      <img  src="img/menu2.png" width="50">
+                    </div>
+                    <!--Navigation-------------------------------------------->
+                    <div id ="drop" class="dropdown-content text-center">
+                      <a href="#about">About Us</a>
+                      <a href="results.html?all=true">Our Recipes</a>
+                      <a href="scraper.html">Web Scraper</a>
+                      <a href="#faq">Contact Info</a>
+                    </div>
+                  </div>
+                </div>
+                <!--Logo-->
+                <div id="home">
+                  <a href="index.html">
+                    <img src="img/newLogo.png" width="60">
+                  </a>
+                </div>
+              </nav>
+                <!--hero img section----------------------------------------------------------->
+                <div class="content">
+                  <section class="inner">
+                  <h1>An <span class="spc">awesome</span> collection of recipes!</h1>
+                  <input class="form-control" id="searchItem" type="text" placeholder="Search our recipe database">
+                  <button class="button">Find Recipe</button>
+                  <br>
+                </section>
+              </div>
+          </div>
+      </header>
+<!-- queried recipes section----------------------------------------------------------->
+    <div class="container about">
+        <div class="panel">
+            <h1 id="abtUs">Example Recipe 1</h1>
+            <p>
+              I wanted to provide a simple collection of easy to read food recipes. Too many cooking websites are
+              littered with ads and  loosely related personal anecdotes. Our site simply provides the steps and ingredients needed for each dish.
+              Our collection is gathered from <a href="#">our web scrapper</a> and user submitted recipes.
+            </p>
+            <button class="button btn-2 text-center">Read Full Recipe</button>
+        </div>
+    </div>
+
+<!--footer section------------------------------------------------------------->
+<footer id="faq">
+    <div class="social">
+        <span class="a"><img src="img/newLogo.png" width="60"></span>
+    </div>
+    <br>
+    <div class="row legal">
+      <p class="text-center">&copy;Killer Recipes 2021</p>
+    </div>
+    <br>
+</footer>
+</body>
+</html>
