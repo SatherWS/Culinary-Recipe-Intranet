@@ -1,7 +1,11 @@
 <?php
 
-$scraper = "/home/colin/killer.recipes/scraper.py";
+$scraper = "/var/www/html/scraper.py";
 $url = $_POST["address"];
-exec("python3 ".$scraper." ".$url);
+$command = "python3 ".$scraper." ".$url;
+echo $command;
+exec($command, $output);
+echo "\n";
+var_dump($output);
 
 ?>

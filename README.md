@@ -12,6 +12,8 @@ Execute deploy.sh (wip)
 ___
 
 # Notes to self
+[Update WSL](https://docs.microsoft.com/en-us/windows/wsl/compare-versions)
+[Surprisingly important](https://superuser.com/questions/1234766/how-to-use-keyboard-to-navigate-google-search-results-now-that-instant-search-i)
 
 ## Websites to scrape
 * [Based Cooking](https://based.cooking)
