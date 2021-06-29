@@ -28,8 +28,9 @@ function showDivs(n) {
   if (n > x.length) {
     slideIndex = 0;
   }
-  if (n < 1) {
-    slideIndex = x.length;
+// n = -1 go to last slide
+  if (n < 0) {
+    slideIndex = x.length -1;
   }
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";
