@@ -5,7 +5,6 @@ $url = $_POST["address"];
 $command = "python3 ".$scraper." ".$url;
 echo $command;
 exec($command, $output);
-echo "\n";
-var_dump($output);
+//header("Location: ../scraper.html");
 
 ?>

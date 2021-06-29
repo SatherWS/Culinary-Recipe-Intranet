@@ -12,7 +12,8 @@ Execute deploy.sh (wip)
 ___
 
 # Notes to self
-[Update WSL](https://docs.microsoft.com/en-us/windows/wsl/compare-versions)
+Run `sudo pip3 install recipe-scrapers` for www-data users to use the web scraper. Run all pip3 commands as sudo.
+[COMPLETED Update WSL](https://docs.microsoft.com/en-us/windows/wsl/compare-versions)
 [Surprisingly important](https://superuser.com/questions/1234766/how-to-use-keyboard-to-navigate-google-search-results-now-that-instant-search-i)
 
 ## Websites to scrape
@@ -23,5 +24,8 @@ ___
 ___
 
 ## Resources used
+[Python recipe scraping package](https://github.com/hhursev/recipe-scrapers)
+
+### old stuff
 * [This blog post by Ben Awad](https://www.benawad.com/scraping-recipe-websites/) 
 * [python lib for parsing xml](https://docs.python.org/3/library/xml.etree.elementtree.html)
