@@ -1,25 +1,24 @@
 from recipe_scrapers import scrape_me
-import sys, urllib
+import sys, pymysql.cursors
 
-url = sys.argv[1]
+# Note: urls cannot have trailing forward slashes (fix later)
 # url = "https://www.allrecipes.com/recipe/284773/korean-barbecue-short-ribs-teriyaki"
 # url = "https://www.bbcgoodfood.com/recipes/turkey-coriander-burgers-guacamole"
-# Note: urls cannot have trailing forward slashes
 
+url = sys.argv[1]
 scraper = scrape_me(url, wild_mode=True)
-data = ""
-data += str(scraper.title())
-data += str(scraper.total_time())
-data += str(scraper.yields())
-data += str(scraper.ingredients())
-data += str(scraper.instructions())
-data += str(scraper.image())
-data += str(scraper.host())
-data += str(scraper.links())
+print(scraper.title())
+print(scraper.total_time())
+print(scraper.yields())
+print(scraper.ingredients())
+print(scraper.instructions())
+print(scraper.image())
+print(scraper.host())
 
 try:
-	data += str(scraper.nutrients())  # if available
+	scraper.nutrients()  # if available
 except:
 	print("nutrition info not found")
 
-print(data)
+# mongo db will be faster than creating a bunch of xml files
+# but, mysql is already in our skill set.
