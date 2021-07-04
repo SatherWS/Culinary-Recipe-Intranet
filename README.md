@@ -1,8 +1,13 @@
 # Killer Recipes
-A web site filled with culinary recipes that were scraped from various sources or hand crafted.
+The idea for this project is to be GitHub for food recipes. This idea has been attempted and failed in the past (reasons why here). This website will be filled with culinary recipes that were scraped from various sources or submitted by our users. 
+
+Websites that are scraped will be forks users can remix these forks or create original recipes for other users to remix.
 
 ## Development
+Moving the project to node js because I think it will be easier to deploy and maintain. Plus, I want to see if I can develop a full stack and non-bloated application using node js.
 
+
+**Temporary Instructions**
 Run `pip install recipe-scrapers` or `pip install -r requirements.txt`
 
 ## Deployment

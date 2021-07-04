@@ -1,6 +1,26 @@
 create database killerr;
 use killerr;
 
+/*
+-- Recipe Object Definition
+{
+    name: "",
+    ingredients: [],
+    instructions: [],
+    tags: [],
+    servings: "",
+    image: "",
+    time: {
+      prep: "",
+      cook: "",
+      active: "",
+      inactive: "",
+      ready: "",
+      total: ""
+    }
+}
+*/
+
 create table recipes (
     id int primary key auto_increment,
     title varchar(75) not null,
