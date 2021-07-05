@@ -7,7 +7,15 @@
 .panel {
     width: 62.5%;
     margin: 0 auto;
+    margin-bottom: 2rem;
 }
+
+.container.results{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    height:50%;
+    width: 100%;
+  }
 
 /* loading screen 
 #loading {

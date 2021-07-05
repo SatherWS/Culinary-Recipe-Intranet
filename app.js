@@ -53,11 +53,25 @@ app.get('/scrapeRecipe/:url/', (req, res) => {
   })
 })
 
-// api methods [getRecipe, searchRecipe, createRecipe]
+/* api methods [getRecipe, searchRecipe, createRecipe] */
+
+// get all the recipes
+function getAllRecipes() {
+  var connection = conn()
+  var recipes
+  var sql = "SELECT title, instructions FROM recipes"
+  connection.query(sql, (err, results) => {
+    if (err) throw err
+    recipes = results
+  })
+  return recipes
+}
+
+app.get('/allRecipes', (req, res) => {
+  res.send(getAllRecipes())
+})
 
 // get a single recipe by id
-
-// get all recipes
 
 // search recipes and return matches (IMPLEMENT AFTER DEPLOYING)
 

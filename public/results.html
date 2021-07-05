@@ -17,10 +17,7 @@
         <!--smooth scrolling js-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="scripts/scroll.js"></script>
-        <!--testimonial slideshow script-->
         <script src="scripts/script.js"></script>
-        <!--search prompt script -->
-        <script src="scripts/homeFunctionality.js"></script>
     </head>
     <body>
 <!--Navigation & Home Page----------------------------------------------------->
@@ -61,7 +58,7 @@
           </div>
       </header>
 <!-- queried recipes section----------------------------------------------------------->
-    <div class="container about">
+    <div class="container results" id="recipe-results">
         <div class="panel">
             <h1 id="abtUs">Example Recipe 1</h1>
             <p>
@@ -71,18 +68,28 @@
             </p>
             <button class="button btn-2 text-center">Read the full recipe</button>
         </div>
+        <div class="panel">
+          <h1 id="abtUs">Example Recipe 1</h1>
+          <p>
+            I wanted to provide a simple collection of easy to read food recipes. Too many cooking websites are
+            littered with ads and  loosely related personal anecdotes. Our site simply provides the steps and ingredients needed for each dish.
+            Our collection is gathered from <a href="#">our web scrapper</a> and user submitted recipes.
+          </p>
+          <button class="button btn-2 text-center">Read the full recipe</button>
+      </div>
     </div>
 
-<!--footer section------------------------------------------------------------->
-<footer id="faq">
-    <div class="social">
-        <span class="a"><img src="img/newLogo.png" width="60"></span>
-    </div>
-    <br>
-    <div class="row legal">
-      <p class="text-center">&copy;Killer Recipes 2021</p>
-    </div>
-    <br>
-</footer>
+  <!--footer section------------------------------------------------------------->
+  <footer id="faq">
+      <div class="social">
+          <span class="a"><img src="img/newLogo.png" width="60"></span>
+      </div>
+      <br>
+      <div class="row legal">
+        <p class="text-center">&copy;Killer Recipes 2021</p>
+      </div>
+      <br>
+  </footer>
+  <script src="show-recipes.js"></script>
 </body>
 </html>
