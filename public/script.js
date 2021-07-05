@@ -9,7 +9,7 @@ window.onload = () => {
         var url = new URL(url_string);
         var link = url.searchParams.get("url");
         var encode = encodeURIComponent(link)
-        fetch("/getRecipe/"+encode).then(res => res.json())
+        fetch("/scrapeRecipe/"+encode).then(res => res.json())
         .then(data => {
             title.innerHTML = data.name
             ingredients.innerHTML += data.ingredients
