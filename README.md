@@ -32,6 +32,7 @@ Execute `deploy.sh` (wip)
 * Search recipes
 * Fix landing page design and search fields on mobile 
 * Look into monetization through drink pairing affiliate links (important)
+* Set up local WSL2 dev environment with nginx
 
 ## Recipes that take too long
 * https://www.closetcooking.com/carne-asada-with-avocado-salsa-verde/
