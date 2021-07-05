@@ -3,7 +3,8 @@ The idea for this project is to be GitHub for recipes. This idea has been attemp
 
 ## Development
 Moving the project to node js because I think it will be easier to deploy and maintain. Plus, I want to see if I can develop a full stack and non-bloated application using node js.
-    * [Recipe Scraper Package in NPM](https://www.npmjs.com/package/recipe-scraper) 
+    
+* [Recipe Scraper Package in NPM](https://www.npmjs.com/package/recipe-scraper) 
 
 ### Development Using WSL2
 Currently hosting a database server on my WSL2 program. I've followed [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql) to enable remote connections to my database server, but it is still not working. I've enabled ssh to my WSL2 instance as well, however I may want to remove that feature.
@@ -19,10 +20,21 @@ TODO: separate the database logic from the `app.js` file.
 * Node-Fetch (not really)
 
 ## Deployment (WIP)
+[Article used to host application](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-debian-9)
 
 Execute `deploy.sh` (wip)
 
 ## Notes to Self
 [Opening and closing connections is not necessary](https://stackoverflow.com/questions/14087924/cannot-enqueue-handshake-after-invoking-quit)
+
+### TODO:
+* Change scraper.html to scraper.ejs
+* Search recipes
+* Fix landing page design and search fields on mobile 
+* Look into monetization through drink pairing affiliate links (important)
+
+## Recipes that take too long
+* https://www.closetcooking.com/carne-asada-with-avocado-salsa-verde/
+
 
 
