@@ -3,6 +3,7 @@ The idea for this project is to be GitHub for recipes. This idea has been attemp
 
 ## Development
 Moving the project to node js because I think it will be easier to deploy and maintain. Plus, I want to see if I can develop a full stack and non-bloated application using node js.
+    * [Recipe Scraper Package in NPM](https://www.npmjs.com/package/recipe-scraper) 
 
 ### Development Using WSL2
 Currently hosting a database server on my WSL2 program. I've followed [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql) to enable remote connections to my database server, but it is still not working. I've enabled ssh to my WSL2 instance as well, however I may want to remove that feature.

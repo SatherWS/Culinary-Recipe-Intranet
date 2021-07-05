@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Killer Recipes</title>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/results.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
         integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <!--google fonts-->
@@ -16,10 +17,7 @@
         <!--smooth scrolling js-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="scripts/scroll.js"></script>
-        <!--testimonial slideshow script-->
         <script src="scripts/script.js"></script>
-        <!--search prompt script -->
-        <script src="scripts/homeFunctionality.js"></script>
     </head>
     <body>
 <!--Navigation & Home Page----------------------------------------------------->
@@ -30,7 +28,7 @@
                 <div class="text-left">
                   <div class="dropdown">
                     <div onclick="closeMenu()" class="dropbtn">
-                      <img src="img/menu2.png" width="50">
+                      <img  src="img/menu2.png" width="50">
                     </div>
                     <!--Navigation-------------------------------------------->
                     <div id ="drop" class="dropdown-content">
@@ -51,27 +49,38 @@
                 <!--hero img section----------------------------------------------------------->
                 <div class="content">
                   <section class="inner">
-                  <h1>Killer Recipe's <span class="spc">Recipe Scraper</span></h1>
-                  <form action="/scrapeRecipe" method="post">
-                    <input name="url[link]" class="form-control" id="searchItem" type="text" placeholder="Enter a url to a recipe">
-                    <button type="submit" class="button">Scrape Website</button>
-                  </form>
+                  <h1>Our <span class="spc">awesome</span> collection of recipes!</h1>
+                  <input class="form-control" id="searchItem" type="text" placeholder="Search our recipe database">
+                  <button class="button">Find Recipe</button>
                   <br>
                 </section>
               </div>
           </div>
       </header>
+<!-- queried recipes section----------------------------------------------------------->
+  <div class="container results" id="recipe-results">
+      <% recipes.forEach( (recipe) => { %>
+        <div class="panel">
+          <h1 id="abtUs"><%= recipe.title %></h1>  
+          <p><%= recipe.summary %></p>
+          <a href="/singleRecipe">
+            <button class="button btn-2 text-center">Read the full recipe</button>
+          </a>
+        </div>
+        <% }) 
+      %>
+  </div>
 
-<!--footer section------------------------------------------------------------->
-<footer id="faq">
-    <div class="social">
-        <span class="a"><img src="img/newLogo.png" width="60"></span>
-    </div>
-    <br>
-    <div class="row legal">
-      <p class="text-center">&copy;Killer Recipes 2021</p>
-    </div>
-    <br>
-</footer>
+  <!--footer section------------------------------------------------------------->
+  <footer id="faq">
+      <div class="social">
+          <span class="a"><img src="img/newLogo.png" width="60"></span>
+      </div>
+      <br>
+      <div class="row legal">
+        <p class="text-center">&copy;Killer Recipes 2021</p>
+      </div>
+      <br>
+  </footer>
 </body>
 </html>

@@ -1,5 +1,6 @@
 const express = require('express')
 const recipeScraper = require('recipe-scraper')
+const path = require('path')
 const conn = require('./api/dbConnection')
 
 const app = express()
@@ -7,23 +8,21 @@ const port = 3000
 app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
 
-// Display open detail.html and fetch /getRecipe?url=some-url.com on the client
-app.get('/details', (req, res) => {
-  res.sendFile(__dirname + '/public/details.html')
-})
 
-// Save recipe to the database
+// Save recipe to the db if not present
 function saveRecipe(arr) {
   var connection = conn()
-  var sql = "INSERT INTO recipes(title, instructions, ingredients, link) VALUES(?, ?, ?, ?)"
+  var sql = "INSERT INTO recipes(title, ingredients, instructions, link) VALUES(?, ?, ?, ?)"
   connection.query(sql, arr, (err) => {
     if (err) throw err
     console.log('RECIPE ADDED')
   })
 }
 
-// Check if url has been saved
+// Check if url has been saved, if not save to db
 function checkUrl(url, arr) {
   var connection = conn()
   var sql = "SELECT COUNT(*) AS count FROM recipes WHERE link = ?"
@@ -32,22 +31,25 @@ function checkUrl(url, arr) {
     if (results[0].count == 0) {
       console.log("RECIPE HAS NOT BEEN SCRAPED")
       saveRecipe(arr)
-    }
+    } 
+    else console.log("RECIPE ALREADY SCRAPED")
   })
 }
 
 // Create and send recipeScraper promise & save to database
-app.get('/scrapeRecipe/:url/', (req, res) => {
-  var url = req.params.url
+app.post('/scrapeRecipe', (req, res) => {
+  var url = req.body.url.link
+  var obj = {} 
   var arr = []
   recipeScraper(url).then(recipe => {
     arr.push(String(recipe.name))
-    arr.push(String(recipe.instructions))
     arr.push(String(recipe.ingredients))
+    arr.push(String(recipe.instructions))
     arr.push(String(url))
     checkUrl(String(url), arr)
+    obj = {ret: recipe}
+    res.render("details.ejs", obj)
 
-    res.send(recipe)
     }).catch(error => {
       console.log(error.message)
   })
@@ -55,27 +57,34 @@ app.get('/scrapeRecipe/:url/', (req, res) => {
 
 /* api methods [getRecipe, searchRecipe, createRecipe] */
 
-// get all the recipes
-function getAllRecipes() {
+// Show all the recipes in the db
+app.get('/getRecipes', (req, res) => {
   var connection = conn()
-  var recipes
-  var sql = "SELECT title, instructions FROM recipes"
+  var obj = {}
+  var sql = "SELECT id, title, SUBSTRING(instructions, 1, 300) AS summary FROM recipes ORDER BY date_posted DESC"
   connection.query(sql, (err, results) => {
     if (err) throw err
-    recipes = results
+    obj = {recipes: results}
+    res.render('results.ejs', obj)
   })
-  return recipes
-}
-
-app.get('/allRecipes', (req, res) => {
-  res.send(getAllRecipes())
 })
 
-// get a single recipe by id
+// Get a single recipe by id from the db
+app.get('/getRecipe/:id', (req, res) => {
+  var id = req.params.id
+  var connection = conn()
+  var obj = {}
+  var sql = "SELECT title, instructions, ingredients, link, date_posted FROM recipes WHERE id = ?"
+  connection.query(sql, id, (err, results) => {
+    if (err) throw err
+    obj = {db_recipe: results}
+    res.render('details.ejs', obj)
+  })
+})
 
-// search recipes and return matches (IMPLEMENT AFTER DEPLOYING)
+// Search recipes and return matches (IMPLEMENT AFTER DEPLOYING)
 
-// create recipe (IMPLEMENT AFTER DEPLOYING)
+// Create recipe (IMPLEMENT AFTER DEPLOYING)
 
 app.listen(port, () => {
   console.log(`Killer.Recipes web scraper listening at http://localhost:${port}`)

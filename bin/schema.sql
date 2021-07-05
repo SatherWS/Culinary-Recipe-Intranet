@@ -21,22 +21,15 @@ use killerr;
 }
 */
 
+-- vvv LATEST TABLE
+
 create table recipes (
   id int primary key auto_increment,
-  title varchar(75) not null,
+  name varchar(75) not null,
   ingredients varchar(1000) not null,
-  instructions varchar(1000),
+  instructions varchar(10000),
   link varchar(300) not null,
   date_posted datetime DEFAULT current_timestamp()
 );
 
-create table recipes_old (
-  id int primary key auto_increment,
-  title varchar(75) not null,
-  total_time datetime not null,
-  yields float not null,
-  ingredients varchar(1000) not null,
-  pic varchar(1000),
-  host varchar(75) not null,
-  nutrients varchar(100)
-);
+-- ^^^
