@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Killer Recipes</title>
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/results.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/results.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
         integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <!--google fonts-->
@@ -16,8 +16,8 @@
 
         <!--smooth scrolling js-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="scripts/scroll.js"></script>
-        <script src="scripts/script.js"></script>
+        <script src="/scripts/scroll.js"></script>
+        <script src="/scripts/script.js"></script>
     </head>
     <body>
 <!--Navigation & Home Page----------------------------------------------------->
@@ -28,7 +28,7 @@
                 <div class="text-left">
                   <div class="dropdown">
                     <div onclick="closeMenu()" class="dropbtn">
-                      <img  src="img/menu2.png" width="50">
+                      <img  src="/img/menu2.png" width="50">
                     </div>
                     <!--Navigation-------------------------------------------->
                     <div id ="drop" class="dropdown-content">
@@ -42,7 +42,7 @@
                 <!--Logo-->
                 <div id="home">
                   <a href="index.html">
-                    <img src="img/newLogo.png" width="60">
+                    <img src="/img/newLogo.png" width="60">
                   </a>
                 </div>
               </nav>
@@ -63,7 +63,7 @@
         <div class="panel">
           <h1 id="abtUs"><%= recipe.title %></h1>  
           <p><%= recipe.summary %></p>
-          <a href="/singleRecipe">
+          <a href='/singleRecipe/<%= recipe.id %>'>
             <button class="button btn-2 text-center">Read the full recipe</button>
           </a>
         </div>
@@ -74,7 +74,7 @@
   <!--footer section------------------------------------------------------------->
   <footer id="faq">
       <div class="social">
-          <span class="a"><img src="img/newLogo.png" width="60"></span>
+          <span class="a"><img src="/img/newLogo.png" width="60"></span>
       </div>
       <br>
       <div class="row legal">

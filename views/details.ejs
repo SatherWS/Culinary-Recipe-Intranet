@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Killer Recipes</title>
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/results.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/results.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
         integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <!--google fonts-->
@@ -16,8 +16,8 @@
 
         <!--smooth scrolling js-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="scripts/scroll.js"></script>
-        <script src="scripts/script.js"></script>
+        <script src="/scripts/scroll.js"></script>
+        <script src="/scripts/script.js"></script>
     </head>
     <body>
 <!--Navigation & Home Page----------------------------------------------------->
@@ -28,13 +28,13 @@
             <div class="text-left">
               <div class="dropdown">
                 <div onclick="closeMenu()" class="dropbtn">
-                  <img  src="img/menu2.png" width="50">
+                  <img  src="/img/menu2.png" width="50">
                 </div>
                 <!--Navigation-------------------------------------------->
                 <div id ="drop" class="dropdown-content">
-                  <a href="index.html">About</a>
+                  <a href="/index.html">About</a>
                   <a href="/getRecipes">All Recipes</a>
-                  <a href="scraper.html">Web Scraper</a>
+                  <a href="/scraper.html">Web Scraper</a>
                   <a href="#faq">Contact Info</a>
                 </div>
               </div>
@@ -42,41 +42,52 @@
             <!--Logo-->
             <div id="home">
               <a href="index.html">
-                <img src="img/newLogo.png" width="60">
+                <img src="/img/newLogo.png" width="60">
               </a>
             </div>
           </nav>
             <!--hero img section----------------------------------------------------------->
             <div class="content">
               <section class="inner text-center">
-              <h1 id="title"><%= ret.name %></h1>
+              <% if (typeof ret == 'object' && ret) { %>
+                <h1 id="title"><%= ret.name %></h1>
+              <% } else { %>
+                <h1 id="title"><%= single[0].title %></h1>
+              <% } %>
             </section>
           </div>
       </div>
   </header>
 <!-- queried recipes section----------------------------------------------------------->
+  
   <div class="container details">
       <div class="panel">
           <h2>Instructions</h2>
-          <% ret.instructions.forEach( (item) => { %>
-            <p><%= item %></p>
-            <% })
-          %> 
-          <h2>Ingredients</h2>
-          <ul>
-          <% ret.ingredients.forEach( (item) => { %>
-            <li><%= item %></li>
-            <% })
-          %> 
-          </ul>
+          <% if (typeof ret == 'object' && ret) { %>
+            <% ret.instructions.forEach( (item) => { %>
+              <p><%= item %></p>
+            <% }) %> 
+          <% } else { %>
+            <p><%= single[0].instructions %></p>
+          <% } %>
 
+          <h2>Ingredients</h2>
+          <% if (typeof ret == 'object' && ret) { %>
+            <ul>
+              <% ret.ingredients.forEach( (item) => { %>
+                <li><%= item %></li>
+              <% }) %> 
+            </ul>
+          <% } else { %>
+            <p><%= single[0].ingredients %></p>
+          <% } %>
       </div>
   </div>
 
 <!--footer section------------------------------------------------------------->
 <footer id="faq">
     <div class="social">
-        <span class="a"><img src="img/newLogo.png" width="60"></span>
+        <span class="a"><img src="/img/newLogo.png" width="60"></span>
     </div>
     <br>
     <div class="row legal">
@@ -84,12 +95,6 @@
     </div>
     <br>
 </footer>
-
-<!--
-<div id="loading">
-  <img id="loading-image" src="img/028d26275ff2b38.gif" alt="Loading..." />
-</div>
--->
 
 </body>
 </html>

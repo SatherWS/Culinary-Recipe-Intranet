@@ -70,14 +70,14 @@ app.get('/getRecipes', (req, res) => {
 })
 
 // Get a single recipe by id from the db
-app.get('/getRecipe/:id', (req, res) => {
+app.get('/singleRecipe/:id', (req, res) => {
   var id = req.params.id
   var connection = conn()
   var obj = {}
   var sql = "SELECT title, instructions, ingredients, link, date_posted FROM recipes WHERE id = ?"
   connection.query(sql, id, (err, results) => {
     if (err) throw err
-    obj = {db_recipe: results}
+    obj = {single: results}
     res.render('details.ejs', obj)
   })
 })
