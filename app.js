@@ -65,7 +65,7 @@ app.get('/getRecipes', (req, res) => {
   connection.query(sql, (err, results) => {
     if (err) throw err
     obj = {recipes: results}
-    res.render('results.ejs', obj)
+    res.render('recipes.ejs', obj)
   })
 })
 
