@@ -27,6 +27,11 @@ Execute `deploy.sh` (wip)
 ## Notes to Self
 [Opening and closing connections is not necessary](https://stackoverflow.com/questions/14087924/cannot-enqueue-handshake-after-invoking-quit)
 
+```
+-- This command must be ran, to satisfy mysql auth requirements.
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
+```
+
 ### TODO:
 * Change scraper.html to scraper.ejs
 * Search recipes

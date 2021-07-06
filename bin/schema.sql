@@ -25,7 +25,7 @@ use killerr;
 
 create table recipes (
   id int primary key auto_increment,
-  name varchar(75) not null,
+  title varchar(75) not null,
   ingredients varchar(1000) not null,
   instructions varchar(10000),
   link varchar(300) not null,
