@@ -16,9 +16,9 @@ I should just move this project to my WSL2 instance because it will simulate how
 TODO: separate the database logic from the `app.js` file.
 
 ### Packages Used
-* [Recipe-Scraper](https://www.npmjs.com/package/recipe-scraper)
+* [Recipe-Scraper](https://www.npmjs.com/package/recipe-scraper) [Kind of ass]
 * [Express](https://www.npmjs.com/package/express)
-* [MySQL](npmjs.com/package/mysql) [TODO: SWITCH TO MONGODB]
+* [MySQL](npmjs.com/package/mysql) [TODO: switch to mongodb]
 
 ## Deployment (WIP)
 [Article used to host application](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-debian-9)
@@ -34,11 +34,11 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
 ```
 
 ### TODO:
-* Change scraper.html to scraper.ejs
-* Search recipes
-* Fix landing page design and search fields on mobile 
 * Look into monetization through drink pairing affiliate links (important)
-* Set up local WSL2 dev environment with nginx
+* Search recipes (edit recipes?)
+* Fix landing page design and search fields on mobile 
+* Set up local WSL2 dev environment with nginx (not important)
+* <strike>Change scraper.html to scraper.ejs</strike>
 
 ## Recipes that take too long
 * https://www.closetcooking.com/carne-asada-with-avocado-salsa-verde/

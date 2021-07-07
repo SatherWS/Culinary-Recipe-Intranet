@@ -11,73 +11,84 @@
         <!--google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
         <!--bootstrap-->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-
         <!--smooth scrolling js-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="scripts/scroll.js"></script>
         <!--testimonial slideshow script-->
-        <script src="scripts/script.js"></script>
+        <script src="scripts/slideshow.js"></script>
     </head>
     <body>
-<!--Navigation & Home Page----------------------------------------------------->
-        <header id="find">
-            <div class="black">
-              <nav class="flex-space black-rgba">
-                <!--Menu List-->
-                <div class="text-left">
-                  <div class="dropdown">
-                    <div onclick="closeMenu()" class="dropbtn">
-                      <img src="img/menu2.png" width="50">
-                    </div>
-                    <!--Navigation-------------------------------------------->
-                    <div id ="drop" class="dropdown-content">
-                      <a href="#about">About</a>
-                      <a href="/getRecipes">All Recipes</a>
-                      <a href="scraper.html">Web Scraper</a>
-                      <a href="#faq">Contact Info</a>
-                    </div>
-                  </div>
-                </div>
-                <!--Logo-->
-                <div id="home">
-                  <a href="index.html">
-                    <img src="img/newLogo.png" width="60">
-                  </a>
-                </div>
-              </nav>
-                <!--hero img section----------------------------------------------------------->
-                <div class="content">
-                  <section class="inner">
-                  <h1>Welcome to <span class="spc">Killer Recipes!</span></h1>
-                  <!--
-                  <input class="form-control" id="searchItem" type="text" placeholder="Search our recipe database">
-                  <button class="button">Find Recipe</button>
-                  -->
-                  <a href='/getRecipes'>
-                    <button class="button">Browse Recipes</button>
-                  </a>
-                  <br>
-                </section>
+<!--Navigation & Home Page---------------------------------------------------->
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="/img/newLogo.png" width="60">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/recipeScraper">Recipe Scraper</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/getRecipes">Browse Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#abtUs">Project Description</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search for recipes" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div class="black">
+          <!--hero img section----------------------------------------------------------->
+          <div class="content">
+            <section class="inner">
+            <h1>Welcome to <span>Killer Recipes.</span></h1>
+            <p>We provide the raw information you need to make <span class="spc">great meals.</span></p>
+            <!--
+            <input class="form-control" id="searchItem" type="text" placeholder="Search our recipe database">
+            <button class="button">Find Recipe</button>
+            -->
+            <div class="row">
+              <div class="col-md-6">
+                <a href='/getRecipes'>
+                  <button class="button w-100">Browse Our Recipe Collection</button>
+                </a>
               </div>
-          </div>
-      </header>
+              <div class="col-md-6">
+                <a href='/recipeScraper'>
+                  <button class="button w-100">Utilize Our Recipe Scraper</button>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+    </div>
+  </header>    
 <!--About us_section----------------------------------------------------------->
             <div class="container about">
                 <div class="row">
                     <div class="col-sm-6" id="about">
-                        <h1 id="abtUs">Why does this exist?</h1>
+                        <h1 id="abtUs">Why does this app exist?</h1>
                         <p>
                           I wanted to provide a simple collection of easy to read food recipes. Too many cooking websites are
                           littered with ads and  loosely related personal anecdotes. Our site simply provides the steps and ingredients needed for each dish.
-                          Our collection is gathered from <a href="scraper.html">our web scraper</a> and user submitted recipes.
+                          Our collection is gathered from various sources from <a href="scraper.html">our web scraper.</a>
                         </p>
                         <a href="/getRecipes">
                           <button class="button btn-2 text-center">Search Our Database</button>
                         </a>
                     </div>
                     <div class="col-sm-6 text-right">
-                        <img src="img/about.png" width="300" height="300">
+                        <img src="img/about.png" width="300" height="300" id="grill">
                     </div>
                 </div>
             </div>
@@ -151,5 +162,8 @@
     </div>
     <br>
 </footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </body>
 </html>

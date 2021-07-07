@@ -36,6 +36,11 @@ function checkUrl(url, arr) {
   })
 }
 
+// Display recipe scraper form
+app.get('/recipeScraper', (req, res) => {
+  res.render('scraper.ejs')
+})
+
 // Create and send recipeScraper promise & save to database
 app.post('/scrapeRecipe', (req, res) => {
   var url = req.body.url.link

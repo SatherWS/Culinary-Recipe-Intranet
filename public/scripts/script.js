@@ -1,44 +1,29 @@
-// Nav Functionality
-function closeMenu() {
-  var menuItems = document.getElementById('drop');
-  var menuIcon = document.getElementsByClassName('dropbtn')[0];
-  if(menuItems.style.display == "none"){
-    menuItems.style.display = "block";
-    menuIcon.style.borderBottom = "none";
-    menuIcon.style.borderBottomRightRadius = "0px";
+function hideSideBar() {
+  vis = !vis;
+  var x = document.getElementById("drop");
+  //var y = document.getElementById("main");
+  //var z = document.getElementById("mini-btn");
+  if (vis) {
+    x.style.display = "block";
+    y.classList.remove('hidden-sidebar');
+    //z.style.display = "none";
   }
   else {
-    menuItems.style.display = "none";
-    menuIcon.style.borderBottom = "solid 2px #ff5400";
-    menuIcon.style.borderBottomRightRadius = "5px";
+    x.style.display = "none";
+    y.classList.add('hidden-sidebar');
+    //z.style.display = "block";
   }
 }
 
-// Slide show script
-var slideIndex = 1;
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
+// hide the side navbar on media query
+var vis = true;
+function check_mediaq(x) {
+  if (x.matches) { // If media query matches
+    hideSideBar();
+  } 
 }
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
+var x = window.matchMedia("(max-width: 750px)");
+check_mediaq(x);
+x.addListener(check_mediaq);
 
-  if (n > x.length) {
-    slideIndex = 0;
-  }
-// n = -1 go to last slide
-  if (n < 0) {
-    slideIndex = x.length -1;
-  }
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-    // debugs
-    console.log(x[i]);
-    console.log("---------");
-    console.log(x[slideIndex]);
-  }
-  x[slideIndex].style.display = "block";
-
-}

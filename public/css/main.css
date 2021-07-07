@@ -24,13 +24,18 @@ nav {
 .text-left {
   text-align: left!important;
 }
+/*
 .dropdown{
   position: relative;
   display: inline-block;
   background-color: black;
 }
+*/
 #drop {
   display: block;
+}
+.hidden-sidebar {
+  display: block!important;
 }
 .dropbtn{
   padding: 25px;
@@ -94,7 +99,6 @@ header{
 .content{
     width: 100%;
     height: 90vh;
-    padding: 1rem;
     background-color:rgba(0,0,0,0.5);
     font-size: larger;
     display: flex;
@@ -176,6 +180,7 @@ row.cost input {
     text-decoration: none;
     cursor: pointer;
     text-align: center;
+    width: 45%
 }
 .button:hover{
     color:#fff;
@@ -324,4 +329,19 @@ p {
   width: 100%;
   height: auto;
   margin: 0 auto;
+}
+
+@media (max-width: 400px) {
+  .inner {
+    width: 100%;
+  }
+  .panel {
+    width: 100%!important;
+  }
+  button.btn-2 {
+    width: 100%!important;
+  }
+  #grill {
+    display: none;
+  }
 }
