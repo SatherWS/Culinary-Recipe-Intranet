@@ -26,10 +26,10 @@ TODO: separate the database logic from the `app.js` file.
 Execute `deploy.sh` (wip)
 
 ## Notes to Self
-[Opening and closing connections is not necessary](https://stackoverflow.com/questions/14087924/cannot-enqueue-handshake-after-invoking-quit)
+[Opening and closing MySQL connections are not necessary](https://stackoverflow.com/questions/14087924/cannot-enqueue-handshake-after-invoking-quit)
 
 ```
--- This query must be ran, to satisfy mysql and express js security requirements.
+-- This query must be ran, to satisfy mysql npm package security requirements.
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
 ```
 
