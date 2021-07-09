@@ -1,8 +1,5 @@
-# Killer.Recipes
-This website contains culinary recipes that were scraped from various sources and can be edited by anyone. Websites that are scraped are called "forks". Users can edit these "forks" by creating a new "branch" of the scraped recipe. User accounts are not necessary for Killer Recipes.
-
-* [GitHub definition of forks](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks/about-forks)
-* [GitHub definition of branches](https://docs.github.com/en/github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)
+# Scraped.Recipes
+This web application contains culinary recipes that were scraped from various sources. Anyone can use our recipe scraper and add scraped content to our database. If users wish to edit their own copies scraped recipes they will need to create a user account or [download the recipe locally.](google.com)
 
 ## Development
 Moving the project to node js because I think it will be easier to deploy and maintain. Plus, I want to see if I can develop a full stack and non-bloated application using node js.
