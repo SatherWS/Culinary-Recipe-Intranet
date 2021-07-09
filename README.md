@@ -34,7 +34,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
 ```
 
 ### TODO:
-* Look into monetization through drink pairing affiliate links (important)
+* Look into monetization through restaurant affiliate links (important)
 * Search recipes (edit recipes?)
 * Fix landing page design and search fields on mobile 
 * Set up local WSL2 dev environment with nginx (not important)
