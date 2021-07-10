@@ -13,6 +13,7 @@ I should just move this project to my WSL2 instance because it will simulate how
 TODO: separate the database logic from the `app.js` file.
 
 ### Packages Used
+* [Embeded Javascript Templates (ejs)](https://www.npmjs.com/package/ejs)
 * [Recipe-Scraper](https://www.npmjs.com/package/recipe-scraper) [Kind of ass]
 * [Express](https://www.npmjs.com/package/express)
 * [MySQL](npmjs.com/package/mysql) [TODO: switch to mongodb]
@@ -31,10 +32,21 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
 ```
 
 ### TODO:
-* Look into monetization through restaurant affiliate links (important)
-* Search recipes (edit recipes?)
-* Fix landing page design and search fields on mobile 
-* Set up local WSL2 dev environment with nginx (not important)
+* Switch to Mongo DB (important)
+* Look into monetization through affiliate links (important)
+    * local restaurants 
+    * grocery delivery
+    * grubhub, uber eats, etc.
+* Search recipes (important)
+* Improve recipe scraping (seems difficult)
+* Implement web crawling recipe scraping bots (important, we need a huge db)
+* User authentication (semi-important)
+* Save and edit user's recipes (semi-important)
+* Fix landing page design and search fields on mobile (in progress)
+* Set up local WSL2 dev environment with nginx (low importance)
+* Use React instead of ejs (may not be necesssary, low importance)
+* <strike>Change name to scraped.recipes (important)</strike>
+* <strike>Use partials in repeated ui components</strike>
 * <strike>Change scraper.html to scraper.ejs</strike>
 
 ## Recipes that take too long

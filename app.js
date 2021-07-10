@@ -92,9 +92,7 @@ app.get('/singleRecipe/:id', (req, res) => {
   })
 })
 
-// Search recipes and return matches (IMPLEMENT AFTER DEPLOYING)
-
-// Create recipe (IMPLEMENT AFTER DEPLOYING)
+// Search recipes and return matches in results view (IMPLEMENT AFTER DEPLOYING)
 
 app.listen(port, () => {
   console.log(`Killer.Recipes web scraper listening at http://localhost:${port}`)

@@ -180,7 +180,7 @@ row.cost input {
     text-decoration: none;
     cursor: pointer;
     text-align: center;
-    /*width: 45%*/
+    margin-right: 3rem;
 }
 .button:hover{
     color:#fff;
@@ -344,4 +344,6 @@ p {
   #grill {
     display: none;
   }
+  .flex-space { display: block;}
+  .button { margin-right: 0!important; }
 }
