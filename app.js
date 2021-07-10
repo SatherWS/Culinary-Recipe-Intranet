@@ -36,6 +36,11 @@ function checkUrl(url, arr) {
   })
 }
 
+// Display landing page
+app.get('/', (req, res) => {
+  res.render('index.ejs')
+})
+
 // Display recipe scraper form
 app.get('/recipeScraper', (req, res) => {
   res.render('scraper.ejs')
