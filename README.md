@@ -2,15 +2,8 @@
 This web application contains culinary recipes that were scraped from various sources. Anyone can use our recipe scraper and add scraped content to our database. If users wish to edit their own copies scraped recipes they will need to create a user account or [download the recipe locally.](google.com)
 
 ## Development
-Moving the project to node js because I think it will be easier to deploy and maintain. Plus, I want to see if I can develop a full stack and non-bloated application using node js.
+Moved the project from python and mysql to nodejs and mongo db. The reason is that I think it will be easier to deploy and maintain. Plus, I want to see if I can develop a full stack and non-bloated application using nodejs, so far I believe I am succeeding.
 
-
-### Development Using WSL2
-Currently hosting a database server on my WSL2 program. I've followed [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-allow-remote-access-to-mysql) to enable remote connections to my database server, but it is still not working. I've enabled ssh to my WSL2 instance as well, however I may want to remove that feature.
-
-
-I should just move this project to my WSL2 instance because it will simulate how my app will be hosted on a live server. 
-TODO: separate the database logic from the `app.js` file.
 
 ### Packages Used
 * [Embeded Javascript Templates (ejs)](https://www.npmjs.com/package/ejs)
@@ -22,6 +15,9 @@ TODO: separate the database logic from the `app.js` file.
 [Article used to host application](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-debian-9)
 
 Execute `deploy.sh` (wip)
+
+## Mongo Database Setup
+
 
 ## Notes to Self
 [Opening and closing MySQL connections are not necessary](https://stackoverflow.com/questions/14087924/cannot-enqueue-handshake-after-invoking-quit)
@@ -43,7 +39,6 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
 * User authentication (semi-important)
 * Save and edit user's recipes (semi-important)
 * Fix landing page design and search fields on mobile (in progress)
-* Set up local WSL2 dev environment with nginx (low importance)
 * Use React instead of ejs (may not be necesssary, low importance)
 * <strike>Change name to scraped.recipes (important)</strike>
 * <strike>Use partials in repeated ui components</strike>
