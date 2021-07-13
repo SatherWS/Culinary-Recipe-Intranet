@@ -46,6 +46,5 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
 
 ## Recipes that take too long
 * https://www.closetcooking.com/carne-asada-with-avocado-salsa-verde/
-
-
+* https://www.thedailymeal.com/cook/how-hard-boil-eggs-and-peel-them-perfectly-every-time
 
