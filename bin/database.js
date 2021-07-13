@@ -2,8 +2,8 @@
 *  https://docs.mongodb.com/manual/reference/method/db.createCollection/#examples
 */
 
-new Mongo();
-show collections;
+//new Mongo();
+//show collections;
 
 db.createCollection("recipes",{ 
 	validator: { $jsonSchema: {
@@ -18,8 +18,8 @@ db.createCollection("recipes",{
 			}
 			instructions: {
 
+				ingredients: {
 			}
-			ingredients: {
 	
 			}
 			url: {
