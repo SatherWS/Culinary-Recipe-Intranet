@@ -17,15 +17,7 @@ Moved the project from python and mysql to nodejs and mongo db. The reason is th
 Execute `deploy.sh` (wip)
 
 ## Mongo Database Setup
-
-
-## Notes to Self
-[Opening and closing MySQL connections are not necessary](https://stackoverflow.com/questions/14087924/cannot-enqueue-handshake-after-invoking-quit)
-
-```
--- This query must be ran, to satisfy mysql npm package security requirements.
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
-```
+[Auto Increment id #1](https://kb.objectrocket.com/mongo-db/auto-increment-sequence-in-mongodb-1276#:~:text=Unlike%20SQL%20databases%2C%20the%20auto,sufficient%20for%20real%2Dtime%20operations.)<br>
 
 ### TODO:
 * Switch to Mongo DB (important)
@@ -48,3 +40,10 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
 * https://www.closetcooking.com/carne-asada-with-avocado-salsa-verde/
 * https://www.thedailymeal.com/cook/how-hard-boil-eggs-and-peel-them-perfectly-every-time
 
+## Notes to Self (Old)
+[Opening and closing MySQL connections are not necessary](https://stackoverflow.com/questions/14087924/cannot-enqueue-handshake-after-invoking-quit)
+
+```
+-- This query must be ran, to satisfy mysql npm package security requirements.
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
+```
