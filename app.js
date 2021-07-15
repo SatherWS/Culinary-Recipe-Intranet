@@ -2,6 +2,7 @@ const express = require('express')
 const recipeScraper = require('recipe-scraper')
 const path = require('path')
 const conn = require('./api/dbConnection')
+const mconn = require('./api/mongoModule.js')
 
 const app = express()
 const port = 3000
@@ -34,6 +35,11 @@ function checkUrl(url, arr) {
     } 
     else console.log("RECIPE ALREADY SCRAPED")
   })
+}
+
+// MONGO DATABASE CODE START
+function selectDocument() {
+  console.log("select all recipe documents") 
 }
 
 // Display landing page

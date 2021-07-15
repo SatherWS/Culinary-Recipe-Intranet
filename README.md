@@ -1,15 +1,13 @@
 # Scraped.Recipes
 This web application contains culinary recipes that were scraped from various sources. Anyone can use our recipe scraper and add scraped content to our database. If users wish to edit their own copies scraped recipes they will need to create a user account or [download the recipe locally.](google.com)
 
-## Development
-Moved the project from python and mysql to nodejs and mongo db. The reason is that I think it will be easier to deploy and maintain. Plus, I want to see if I can develop a full stack and non-bloated application using nodejs, so far I believe I am succeeding.
-
 
 ### Packages Used
 * [Embeded Javascript Templates (ejs)](https://www.npmjs.com/package/ejs)
 * [Recipe-Scraper](https://www.npmjs.com/package/recipe-scraper) [Kind of ass]
 * [Express](https://www.npmjs.com/package/express)
-* [MySQL](npmjs.com/package/mysql) [TODO: switch to mongodb]
+* [Mongo DB](https://www.npmjs.com/package/mongodb)
+* [MySQL](https://npmjs.com/package/mysql) [TODO: switch to mongodb]
 
 ## Deployment (WIP)
 [Article used to host application](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-debian-9)
