@@ -87,6 +87,7 @@ a:hover{
   display: inline-block;
 }
 /*hero section*/
+.m-0-auto {margin: 0 auto;}
 header{
     background-image: url(../img/new-landing-1.jpg);
     background-repeat:no-repeat;

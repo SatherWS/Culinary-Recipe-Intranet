@@ -2,7 +2,7 @@ const express = require('express')
 const recipeScraper = require('recipe-scraper')
 const path = require('path')
 const conn = require('./api/dbConnection')
-const mconn = require('./api/mongoModule.js')
+const mconn = require('./api/mongoModule')
 
 const app = express()
 const port = 3000
@@ -38,13 +38,26 @@ function checkUrl(url, arr) {
 }
 
 // MONGO DATABASE CODE START
-function selectDocument() {
-  console.log("select all recipe documents") 
+function insertRecipe(recipe) {
+  var db = mconn.getDb()
+  db.collection('sr').insertOne(recipe)
+  if (err) throw err
+  else 
+    console.log("select all recipe documents") 
 }
 
 // Display landing page
 app.get('/', (req, res) => {
   res.render('index.ejs')
+})
+
+app.get('/mongoTest', (req, res) => {
+  var url = "https://www.allrecipes.com/recipe/143809/best-steak-marinade-in-existence/"
+  recipeScraper(url).then(recipe => {
+    insertRecipe(recipe)
+  }).catch(error => {
+    console.log(error.message)
+  })
 })
 
 // Display recipe scraper form

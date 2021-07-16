@@ -7,12 +7,12 @@ module.exports = {
 
   connectToServer: (callback) => {
     MongoClient.connect( url,  { useNewUrlParser: true }, (err, client) => {
-      _db = client.db('test_db')
+      _db = client.db('mydb')
       return callback( err );
     })
   },
 
-  getDb: function() {
+  getDb: () => {
     return _db
   }
 }
