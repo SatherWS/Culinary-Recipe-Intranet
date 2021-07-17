@@ -20,6 +20,12 @@ Set `result.url` document fields as unique indices. This prevents duplicate reci
 db.recipes.createIndex({"result.url": 1}, {unique: true})
 ```
 
+Searching nested document fields.
+```
+// search recipes that contain "m"
+db.recipes.find({"result.recipe.name": /m/})
+```
+
 ### TODO:
 * <strike>Switch to Mongo DB (done)</strike>
 * Secure Mongo database
@@ -37,14 +43,10 @@ db.recipes.createIndex({"result.url": 1}, {unique: true})
 * <strike>Use partials in repeated ui components</strike>
 * <strike>Change scraper.html to scraper.ejs</strike>
 
+## Recipe Scraping Expeditions
+In order to grow my collection of recipes I am going to select specific sites to crawl and scrape. Listed below are some of my targets.
+* 
+
 ## Recipes that take too long
 * https://www.closetcooking.com/carne-asada-with-avocado-salsa-verde/
 * https://www.thedailymeal.com/cook/how-hard-boil-eggs-and-peel-them-perfectly-every-time
-
-## Notes to Self (Old)
-[Opening and closing MySQL connections are not necessary](https://stackoverflow.com/questions/14087924/cannot-enqueue-handshake-after-invoking-quit)
-
-```
--- This query must be ran, to satisfy mysql npm package security requirements.
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'toor';
-```

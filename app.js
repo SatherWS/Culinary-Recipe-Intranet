@@ -63,9 +63,12 @@ MongoClient.connect('mongodb://localhost:27017/sr', (err, client) => {
 
   // Search recipes and return matches in results view
   app.post('/searchRecipe', (req, res) => {
-    var s = req.params.search
-    recipeCollection.find({}).toArray((err, result) => {
+    var s = req.body.search
+    var src_string = "'result.recipe.name': /"+s+"/"
+    console.log(src_string)
+    recipeCollection.find({src_string}).toArray((err, result) => {
       if (err) throw err
+      console.log(result)
       res.render('recipes.ejs', {recipes: result})
     })
   })
