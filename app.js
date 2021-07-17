@@ -1,8 +1,8 @@
 const express = require('express')
 const recipeScraper = require('recipe-scraper')
 const path = require('path')
-const conn = require('./api/dbConnection')
-const mconn = require('./api/mongoModule')
+var MongoClient = require('mongodb').MongoClient
+const { ObjectId } = require('mongodb')
 
 const app = express()
 const port = 3000
@@ -13,106 +13,72 @@ app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 
-// Save recipe to the db if not present
-function saveRecipe(arr) {
-  var connection = conn()
-  var sql = "INSERT INTO recipes(title, ingredients, instructions, link) VALUES(?, ?, ?, ?)"
-  connection.query(sql, arr, (err) => {
-    if (err) throw err
-    console.log('RECIPE ADDED')
-  })
-}
+// For the time being all database operations will go inside the MongoClient connection
 
-// Check if url has been saved, if not save to db
-function checkUrl(url, arr) {
-  var connection = conn()
-  var sql = "SELECT COUNT(*) AS count FROM recipes WHERE link = ?"
-  connection.query(sql, url, (err, results) => {
-    if (err) throw err
-    if (results[0].count == 0) {
-      console.log("RECIPE HAS NOT BEEN SCRAPED")
-      saveRecipe(arr)
-    } 
-    else console.log("RECIPE ALREADY SCRAPED")
-  })
-}
-
-// MONGO DATABASE CODE START
-function insertRecipe(recipe) {
-  var db = mconn.getDb()
-  db.collection('sr').insertOne(recipe)
+MongoClient.connect('mongodb://localhost:27017/sr', (err, client) => {
   if (err) throw err
-  else 
-    console.log("select all recipe documents") 
-}
+	const db = client.db('sr')
+	const recipeCollection = db.collection('recipes')
 
-// Display landing page
-app.get('/', (req, res) => {
-  res.render('index.ejs')
-})
+  // Scrape recipe and add to db url not present
+  app.post('/scrapeRecipe', async(req, res) => {
+    var url = req.body.url.link
+    var obj = {} 
+    recipeScraper(url).then((recipe) => {
+      obj = {result: {recipe, url: url}}
+      recipeCollection.insertOne(obj).then(() => {
+        console.log(obj)
+        res.render('details.ejs', obj)
+      }).catch(error => {
+        // This extra catch makes the logs easier to read,
+        // a temporary fix at this point.
+        console.log(error.message)
+        res.render('details.ejs', obj)
+      })
+    }).catch(error => {
+        console.log(error.message)
+        // TODO: render error message in web scraper page
+    })
+  })
 
-app.get('/mongoTest', (req, res) => {
-  var url = "https://www.allrecipes.com/recipe/143809/best-steak-marinade-in-existence/"
-  recipeScraper(url).then(recipe => {
-    insertRecipe(recipe)
-  }).catch(error => {
-    console.log(error.message)
+  // Show all the recipes in the db
+  app.get('/getRecipes', (req, res) => {
+    recipeCollection.find().toArray((err, result) => {
+      if (err) throw err
+      console.log({recipes: result})
+      res.render('recipes.ejs', {recipes: result})
+    })
+  })
+
+  // Get a single recipe from the db by get request id 
+  app.get('/singleRecipe/:id', (req, res) => {
+    var id = req.params.id
+    var oid = new ObjectId(id)
+    recipeCollection.findOne({_id: oid}, (err, result) => {
+      if (err) throw err
+      console.log(result)
+      res.render('details.ejs', result)
+    })
+  })
+
+  // Search recipes and return matches in results view
+  app.post('/searchRecipe', (req, res) => {
+    var s = req.params.search
+    recipeCollection.find({}).toArray((err, result) => {
+      if (err) throw err
+      res.render('recipes.ejs', {recipes: result})
+    })
   })
 })
 
-// Display recipe scraper form
 app.get('/recipeScraper', (req, res) => {
   res.render('scraper.ejs')
 })
 
-// Create and send recipeScraper promise & save to database
-app.post('/scrapeRecipe', (req, res) => {
-  var url = req.body.url.link
-  var obj = {} 
-  var arr = []
-  recipeScraper(url).then(recipe => {
-    arr.push(String(recipe.name))
-    arr.push(String(recipe.ingredients))
-    arr.push(String(recipe.instructions))
-    arr.push(String(url))
-    checkUrl(String(url), arr)
-    obj = {ret: recipe}
-    res.render("details.ejs", obj)
-
-    }).catch(error => {
-      console.log(error.message)
-  })
+app.get('/', (req, res) => {
+  res.render('index.ejs')
 })
-
-/* api methods [getRecipe, searchRecipe, createRecipe] */
-
-// Show all the recipes in the db
-app.get('/getRecipes', (req, res) => {
-  var connection = conn()
-  var obj = {}
-  var sql = "SELECT id, title, SUBSTRING(instructions, 1, 300) AS summary FROM recipes ORDER BY date_posted DESC"
-  connection.query(sql, (err, results) => {
-    if (err) throw err
-    obj = {recipes: results}
-    res.render('recipes.ejs', obj)
-  })
-})
-
-// Get a single recipe by id from the db
-app.get('/singleRecipe/:id', (req, res) => {
-  var id = req.params.id
-  var connection = conn()
-  var obj = {}
-  var sql = "SELECT title, instructions, ingredients, link, date_posted FROM recipes WHERE id = ?"
-  connection.query(sql, id, (err, results) => {
-    if (err) throw err
-    obj = {single: results}
-    res.render('details.ejs', obj)
-  })
-})
-
-// Search recipes and return matches in results view (IMPLEMENT AFTER DEPLOYING)
 
 app.listen(port, () => {
-  console.log(`Killer.Recipes web scraper listening at http://localhost:${port}`)
+  console.log(`Scraped.Recipes web scraper listening at http://localhost:${port}`)
 })

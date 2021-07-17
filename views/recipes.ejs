@@ -3,7 +3,6 @@
   <head>
   <%- include('partials/head.ejs') %>
   <link rel="stylesheet" href="/css/results.css">
-
 </head>
   <body>
 <!--Navigation & Home Page----------------------------------------------------->
@@ -13,26 +12,24 @@
             <!--hero img section----------------------------------------------------------->
             <div class="content">
               <section class="inner">
-              <h1>Our <span class="spc">awesome</span> collection of recipes!</h1>
-              <input class="form-control" id="searchItem" type="text" placeholder="Search our recipe database">
-              <button class="button">Find Recipe</button>
-              <br>
+              <h1 class="text-center">
+                <span class="spc"><%= recipes.length %></span> Recipes Found!
+              </h1>
             </section>
           </div>
       </div>
   </header>
 <!-- queried recipes section----------------------------------------------------------->
   <div class="container results" id="recipe-results">
-      <% recipes.forEach( (recipe) => { %>
+      <% for (var i=0; i < recipes.length; i++) { %>
         <div class="panel">
-          <h1 id="abtUs"><%= recipe.title %></h1>  
-          <p><%= recipe.summary %></p>
-          <a href='/singleRecipe/<%= recipe.id %>'>
+          <h1 id="abtUs"><%= recipes[i].result.recipe.name %></h1>  
+          <p><%= recipes[i].result.recipe.description %></p>
+          <a href='/singleRecipe/<%= recipes[i]._id %>'>
             <button class="button btn-2 text-center">Read the full recipe</button>
           </a>
         </div>
-        <% }) 
-      %>
+      <% } %>
   </div>
 
   <!--footer section------------------------------------------------------------->

@@ -21,7 +21,7 @@ use killerr;
 }
 */
 
--- vvv LATEST TABLE
+-- vvv LATEST TABLE (now using mongo db)
 
 create table recipes (
   id int primary key auto_increment,

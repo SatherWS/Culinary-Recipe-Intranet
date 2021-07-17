@@ -13,12 +13,8 @@
           <!--hero img section----------------------------------------------------------->
           <div class="content">
             <section class="inner text-center">
-            <% if (typeof ret == 'object' && ret) { %>
-              <h1 id="title"><%= ret.name %></h1>
-            <% } else { %>
-              <h1 id="title"><%= single[0].title %></h1>
-            <% } %>
-          </section>
+              <h1 id="title"><%= result.recipe.name %></h1>
+            </section>
         </div>
       </div>
   </header>
@@ -26,25 +22,16 @@
   
   <div class="container details">
       <div class="panel">
-          <h2>Instructions</h2>
-          <% if (typeof ret == 'object' && ret) { %>
-            <% ret.instructions.forEach( (item) => { %>
-              <p><%= item %></p>
-            <% }) %> 
-          <% } else { %>
-            <p><%= single[0].instructions %></p>
+        <h2>Ingredients</h2>
+        <ul>
+          <% for (var i=0; i < result.recipe.ingredients.length; i++) { %>
+            <li><%= result.recipe.ingredients[i] %></li>
           <% } %>
-
-          <h2>Ingredients</h2>
-          <% if (typeof ret == 'object' && ret) { %>
-            <ul>
-              <% ret.ingredients.forEach( (item) => { %>
-                <li><%= item %></li>
-              <% }) %> 
-            </ul>
-          <% } else { %>
-            <p><%= single[0].ingredients %></p>
-          <% } %>
+        </ul>
+        <h2>Instructions</h2>
+        <% for (var i=0; i < result.recipe.instructions.length; i++) { %>
+          <p><%= result.recipe.instructions[i] %></p>
+        <% } %>
       </div>
   </div>
 
