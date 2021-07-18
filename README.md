@@ -11,6 +11,10 @@ This web application contains culinary recipes that were scraped from various so
 ## Deployment Notes
 [Article used to host application](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-debian-9)
 
+```
+// options: start, stop, restart
+pm2 <option> app.js
+```
 Execute `deploy.sh` (wip)
 
 **Deployments**
