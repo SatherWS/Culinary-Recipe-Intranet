@@ -25,7 +25,7 @@ MongoClient.connect('mongodb://localhost:27017/sr', (err, client) => {
     var url = req.body.url.link
     var obj = {} 
     recipeScraper(url).then((recipe) => {
-      obj = {result: {recipe, url: url}}
+      obj = {recipe, url: url}
       recipeCollection.insertOne(obj).then(() => {
         console.log(obj)
         res.render('details.ejs', obj)
@@ -64,9 +64,8 @@ MongoClient.connect('mongodb://localhost:27017/sr', (err, client) => {
   // Search recipes and return matches in results view
   app.post('/searchRecipe', (req, res) => {
     var s = req.body.search
-    var src_string = "'result.recipe.name': /"+s+"/"
-    console.log(src_string)
-    recipeCollection.find({src_string}).toArray((err, result) => {
+    recipeCollection.find({"recipe.name": {$regex: ".*"+s+".", $options:"i"}})
+    .toArray((err, result) => {
       if (err) throw err
       console.log(result)
       res.render('recipes.ejs', {recipes: result})

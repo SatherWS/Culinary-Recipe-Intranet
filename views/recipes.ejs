@@ -23,8 +23,8 @@
   <div class="container results" id="recipe-results">
       <% for (var i=0; i < recipes.length; i++) { %>
         <div class="panel">
-          <h1 id="abtUs"><%= recipes[i].result.recipe.name %></h1>  
-          <p><%= recipes[i].result.recipe.description %></p>
+          <h1 id="abtUs"><%= recipes[i].recipe.name %></h1>  
+          <p><%= recipes[i].recipe.description %></p>
           <a href='/singleRecipe/<%= recipes[i]._id %>'>
             <button class="button btn-2 text-center">Read the full recipe</button>
           </a>
