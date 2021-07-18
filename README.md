@@ -16,7 +16,7 @@ Execute `deploy.sh` (wip)
 **Deployments**
 | Date | Time | Commit Link |
 | ---- | ---- | ----------- |
-| July 18 2021| xx:xx:xx | [commit]() |
+| July 18 2021| xx:xx:xx | [commit 56af09e](https://github.com/colinsather/Scraped.Recipes/commit/56af09e) |
 | July 6 2021 | 22:13:48 | [commit 672d7fb](https://github.com/colinsather/Scraped.Recipes/commit/672d7fbd6751123476bfc6297b75450dd1d801c5) |
 
 
