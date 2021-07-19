@@ -1,7 +1,6 @@
 
 *{
  margin:0;
- padding:0;
  box-sizing: border-box;
 }
 html, body {
@@ -314,9 +313,6 @@ footer{
     height:auto;
     margin:0 auto;
     padding:1rem;
-}
-ul{
-    list-style-type: none;
 }
 span.a.b{
     width:150px;

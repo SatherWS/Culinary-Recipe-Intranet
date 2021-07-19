@@ -15,7 +15,11 @@
     padding-bottom: 4rem;
     height:50%;
     width: 100%;
-  }
+}
+
+@media (max-width: 800px) {
+	.panel {width: 100%;}
+}
 
 /* loading screen 
 #loading {
