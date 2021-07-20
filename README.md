@@ -20,32 +20,37 @@ Execute `deploy.sh` (wip)
 **Deployments**
 | Date | Time | Commit Link |
 | ---- | ---- | ----------- |
-| July 18 2021| xx:xx:xx | [commit 56af09e](https://github.com/colinsather/Scraped.Recipes/commit/56af09e) |
+| July 18 2021| 09:00:01 | [commit 56af09e](https://github.com/colinsather/Scraped.Recipes/commit/56af09e) |
 | July 6 2021 | 22:13:48 | [commit 672d7fb](https://github.com/colinsather/Scraped.Recipes/commit/672d7fbd6751123476bfc6297b75450dd1d801c5) |
 
 
 ### TODO:
-* <strike>Switch to Mongo DB (done)</strike>
 * Secure Mongo database (important)
     * Do after user authentication is implemented
 * Implement monetization through affiliate links (important)
-* <strike>Search recipes (semi-important)</strike>
 * Improve recipe scraping (important)
 * Implement web crawling recipe scraping bots (important)
 * User authentication (semi-important)
 * Save and edit user's recipes (semi-important)
 * Use React instead of ejs (low importance)
+* Improve recipe searching
+* <strike>Sort recipes from newest to oldest</strike>
+* <strike>Search recipes (semi-important)</strike>
+* <strike>Switch to Mongo DB (important)</strike>
 * <strike>Change name to scraped.recipes (important)</strike>
 * <strike>Use partials in repeated ui components</strike>
 * <strike>Change scraper.html to scraper.ejs</strike>
 
-## Mongo Database Notes
+## Mongo Database
+### Important
 Set `url` document fields as unique indices. This prevents duplicate recipes from being saved.
-
 ```
 db.recipes.createIndex({"url": 1}, {unique: true})
 ```
+### Other Mongo Related Notes
+
 Get indexes
+
 ```
 db.recipes.getIndexes()
 ```

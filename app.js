@@ -43,7 +43,7 @@ MongoClient.connect('mongodb://localhost:27017/sr', (err, client) => {
 
   // Show all the recipes in the db
   app.get('/getRecipes', (req, res) => {
-    recipeCollection.find().toArray((err, result) => {
+    recipeCollection.find().sort({$natural: -1}).toArray((err, result) => {
       if (err) throw err
       console.log({recipes: result})
       res.render('recipes.ejs', {recipes: result})

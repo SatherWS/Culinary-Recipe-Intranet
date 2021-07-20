@@ -6,7 +6,7 @@
 </head>
   <body>
 <!--Navigation & Home Page----------------------------------------------------->
-    <header id="find">
+    <div class="detail-header">
       <%- include('partials/nav.ejs') %>
         <div class="black">
             <!--hero img section----------------------------------------------------------->
@@ -18,7 +18,7 @@
             </section>
           </div>
       </div>
-  </header>
+    </div>
 <!-- queried recipes section----------------------------------------------------------->
   <div class="container results" id="recipe-results">
       <% for (var i=0; i < recipes.length; i++) { %>
