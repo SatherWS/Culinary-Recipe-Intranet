@@ -1,5 +1,13 @@
 .content {
     height: 20vh!important;
+    background: #fff!important;
+}
+.black {
+    color: #000!important;
+}
+.uline {
+    border: solid 1px #eee;
+    margin: 2rem 0;
 }
 .panel h1{
     font-family: 'Shrikhand', cursive;
