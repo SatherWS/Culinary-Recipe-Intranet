@@ -34,12 +34,6 @@ Execute `deploy.sh` (wip)
 * Save and edit user's recipes (semi-important)
 * Use React instead of ejs (low importance)
 * Improve recipe searching
-* <strike>Sort recipes from newest to oldest</strike>
-* <strike>Search recipes (semi-important)</strike>
-* <strike>Switch to Mongo DB (important)</strike>
-* <strike>Change name to scraped.recipes (important)</strike>
-* <strike>Use partials in repeated ui components</strike>
-* <strike>Change scraper.html to scraper.ejs</strike>
 
 ## Mongo Database
 ### Important
